@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interview Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Interview Tracker</h1>
+    <div>
+      <button id="add-applicant-btn">+ Add Applicant</button>
+      <button id="export-pdf">⬇️ PDF</button>
+    </div>
+  </header>
+
+  <main class="applicant-container"></main>
+
+  <div class="modal" id="applicant-modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Add New Applicant</h2>
+      <form id="applicant-form">
+        <input type="hidden" id="applicant-id" />
+        <label>Name<input type="text" id="name" required /></label>
+        <label>Position<input type="text" id="position" required /></label>
+        <label>Interview Stage
+          <select id="stage">
+            <option>Phone Screen</option>
+            <option>Technical Interview</option>
+            <option>Onsite</option>
+            <option>Offer</option>
+          </select>
+        </label>
+        <label>Date<input type="date" id="date" required /></label>
+        <label>Notes<textarea id="notes"></textarea></label>
+        <div class="modal-buttons">
+          <button type="submit">Save</button>
+          <button type="button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
